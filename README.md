@@ -21,10 +21,15 @@ You can specify options (-g and -c) in any order.
 Example Usage
 ------------
 ./my_ipc -g "ls -l" -c "wc -l"      // This command will count the number of lines in the output of ls -l.
+<br>
 ./my_ipc -c "wc -l" -g "ls -l"      // This command will also count the number of lines in the output of ls -l.
+<br>
 ./my_ipc -g "echo 'Hello, World!'" -c "wc -w"   // This command should count the number of words in the string "Hello, World!".
+<br>
 ./my_ipc -g "cat /etc/passwd | grep root" -c "wc -l"    // This command should count the number of lines in the output of grep root applied to the contents of /etc/passwd.
+<br>
 ./my_ipc -g "echo ''" -c "wc -w"    // This command should count zero words because the generator produces an empty string.
+<br>
 
 Clean up
 --------
